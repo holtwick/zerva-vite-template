@@ -4,19 +4,11 @@
   "description": "Zerva tproject template for vite integration",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "vue": "^3.2.16"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.3",
-    "typescript": "^4.4.4",
-    "vite": "^2.6.7",
-    "vue-tsc": "^0.28.6",
-    "zerva-vite-plugin": "^0.4.4"
+    "start": "zerva",
+    "build": "zerva build",
+    "serve": "node dist/main.cjs",
+    "dev": "zerva",
+    "test": "jest",
+    "upload": "rsync -avz --exclude-from=.dockerignore * myHost:myFolder"
   }
 }

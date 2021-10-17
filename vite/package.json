@@ -1,0 +1,24 @@
+{
+  "name": "zerva-vite-template",
+  "version": "0.1.1",
+  "description": "Zerva tproject template for vite integration",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.16",
+    "zeed": "^0.7.48"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "typescript": "^4.4.4",
+    "vite": "^2.6.7",
+    "vue-tsc": "^0.28.6",
+    "zerva": "^0.4.39",
+    "zerva-vite-plugin": "^0.4.4"
+  }
+}

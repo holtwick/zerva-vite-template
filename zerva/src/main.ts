@@ -6,7 +6,7 @@ import {
   toPath,
 } from "zeed"
 import { serve, useHttp } from "zerva"
-import { setupService } from "./service"
+import { setupService } from "../src/service"
 
 Logger.setHandlers([
   LoggerFileHandler(toPath("data/zerva.log"), {
