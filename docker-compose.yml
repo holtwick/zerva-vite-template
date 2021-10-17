@@ -1,0 +1,31 @@
+version: "3"
+
+# Example for running a web service with these features:
+# - Dynamic data is accessible through "data" folder
+# - Nginx example proxy setup
+# - Avoid watchtower updates
+
+# Start using:
+# docker-compose up -d --build
+
+services:
+  zerva:
+    build: .
+    restart: always
+    volumes:
+      - ./data:/app/data
+    environment:
+      - VIRTUAL_HOST=zerva.example.com
+      - VIRTUAL_PORT=8080
+      - LETSENCRYPT_HOST=zerva.example.com
+      - LETSENCRYPT_EMAIL=dirk.holtwick@gmail.com
+      - NETWORK=proxy
+
+    # https://containrrr.dev/watchtower/container-selection/
+    labels:
+      com.centurylinklabs.watchtower.enable: "false"
+
+networks:
+  default:
+    external:
+      name: proxy

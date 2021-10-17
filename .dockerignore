@@ -1,0 +1,10 @@
+node_modules
+pnpm*
+.pnpm*
+dist
+tmp
+*.log
+.out*
+*.local
+resources
+data
