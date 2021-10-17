@@ -1,13 +1,9 @@
 import { Logger } from "zeed"
-import { on, useHttp } from "zerva"
+import { on } from "zerva"
 
 const log = Logger("service")
 
 export async function setupService() {
-  useHttp({
-    port: 8080,
-  })
-
   on("httpInit", ({ get }) => {
     const started = new Date().toISOString()
     log.info(`Service started at ${started}`)

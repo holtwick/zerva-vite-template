@@ -1,25 +1,4 @@
-import {
-  Logger,
-  LoggerFileHandler,
-  LoggerNodeHandler,
-  LogLevel,
-  toPath,
-} from "zeed"
-import { serve } from "zerva"
-import { setupService } from "./service"
+import { createApp } from 'vue'
+import App from './App.vue'
 
-Logger.setHandlers([
-  LoggerFileHandler(toPath("data/zerva.log"), {
-    level: LogLevel.debug,
-  }),
-  LoggerNodeHandler({
-    level: LogLevel.info,
-    filter: "*",
-    colors: true,
-    padding: 32,
-    nameBrackets: false,
-    levelHelper: false,
-  }),
-])
-
-serve(setupService)
+createApp(App).mount('#app')
