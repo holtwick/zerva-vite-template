@@ -1,9 +1,8 @@
-process.env.NODE_PATH += resolve(process.cwd(), "..", "zerva", "node_modules")
-
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import { resolve } from "path"
-import { zerva } from "../zerva"
+// import { zerva } from "../zerva"
+import { viteZervaPlugin } from "zerva-vite-plugin"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,6 +13,9 @@ export default defineConfig({
   plugins: [
     //
     vue(),
-    zerva(),
+    viteZervaPlugin(async () => {
+      const x = await import("../zerva")
+      console.log("HELLO", process.env.NODE_PATH, x)
+    }),
   ],
 })
