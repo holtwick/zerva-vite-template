@@ -1,3 +1,5 @@
+> DEPRECATED! Better solution will follow...
+
 # 🌱 Zerva Project Template for Vite
 
 **This is a side project of [Zerva](https://github.com/holtwick/zerva)**
